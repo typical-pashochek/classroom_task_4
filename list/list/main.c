@@ -37,7 +37,15 @@ void outputList(List* head) {
 }
 
 void addBeforeValue(List* head, double value) {
-	while ((head->next->next != 0) && (fabs(head->next->value - value) > 0.001)) {
+	if (fabs(head->value - value) < 0.00001) {
+		List* ptr = head->next;
+		head->next = (List*)malloc(sizeof(List));
+		head->next->value = head->value;
+		head->next->next = ptr;
+		head->value = rand() % 100 * 0.01 + 25;
+		return;
+	}
+	while ((head->next->next != 0) && (fabs(head->next->value - value) > 0.00001)) {
 		head = head->next;
 	}
 	if (fabs(head->next->value - value) < 0.00001) {
@@ -69,7 +77,6 @@ int main() {
 	double value;
 	printf("Input value:");
 	scanf_s("%lf", &value);
-	printf("value: %lf\n", value);
 	addBeforeValue(l1, value);
 	outputList(l1);
 	return 0;
