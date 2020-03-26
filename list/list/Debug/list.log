@@ -1,0 +1,5 @@
+﻿  main.c
+D:\Projects_in_c\list\list\main.c(17,28): warning C4013: malloc: нет определения; предполагается "extern" с возвратом типа "int"
+D:\Projects_in_c\list\list\main.c(23,21): warning C4013: rand: нет определения; предполагается "extern" с возвратом типа "int"
+D:\Projects_in_c\list\list\main.c(58,7): warning C4013: srand: нет определения; предполагается "extern" с возвратом типа "int"
+  list.vcxproj -> D:\Projects_in_c\list\Debug\list.exe
